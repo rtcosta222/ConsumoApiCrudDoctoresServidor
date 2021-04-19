@@ -80,7 +80,7 @@ public class ServiceDoctores {
         
         HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
         conexion.setRequestMethod("POST");
-        conexion.setRequestProperty("Content-Type", "Aapplication/json");
+        conexion.setRequestProperty("Content-Type", "application/json");
         Doctor doc = new Doctor(hcod, dcod, ape, espec, sal);
         Gson converter = new Gson();
         String doctorjson = converter.toJson(doc);
@@ -101,7 +101,7 @@ public class ServiceDoctores {
         
         HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
         conexion.setRequestMethod("PUT");
-        conexion.setRequestProperty("Content-Type", "Aapplication/json");
+        conexion.setRequestProperty("Content-Type", "application/json");
         Doctor doc = new Doctor(hcod, dcod, ape, espec, sal);
         Gson converter = new Gson();
         String doctorjson = converter.toJson(doc);
@@ -116,7 +116,7 @@ public class ServiceDoctores {
         return statuscode;
     }
 
-    public int eliminarDoctor(int id) throws MalformedURLException, IOException{
+    public int eliminarDoctor(String id) throws MalformedURLException, IOException{
         // Como en Ajax
         String request = "api/cruddoctor/delete/" + id;
         URL url = new URL(this.urlapi + request);

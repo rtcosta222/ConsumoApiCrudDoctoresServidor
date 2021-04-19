@@ -44,8 +44,8 @@ public class ControllerDoctor {
         return "<h1>Doctor insertado. Código" + code + "</h1>";
     }
     
-    public String deleteDoctor(String iddoc){
+    public String deleteDoctor(String iddoc) throws IOException{
         int code = this.service.eliminarDoctor(iddoc);
-        return "<h1>Doctor eliminado. Code(" + code + "</h1>";
+        return "<h1>Doctor eliminado. Code(" + code + ")</h1>";
     }
 }

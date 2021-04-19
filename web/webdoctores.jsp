@@ -18,7 +18,8 @@
         <a href="webinsertardoctor.jsp">Insertar doctor</a>
     <%  String eliminar = request.getParameter("eliminar");
         if(eliminar != null){
-            controller.deleteDoctor(eliminar);
+            String msj = controller.deleteDoctor(eliminar);
+            out.println(msj);
         }
     %>
         <form method="POST">
